@@ -7,6 +7,8 @@ describe('Alert Handling test', () => {
         await $('[href="/javascript_alerts"]').click()
         await $('[onclick="jsAlert()"]').click()
         
+          await browser.acceptAlert()
+          await expect($('[id="result"]')).toHaveText(successfulMessage)
         //accept alert
 
         //expect that successfulMessage is displayed
